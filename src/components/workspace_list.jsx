@@ -4,7 +4,7 @@ import React from 'react';
 const WorkspaceList = () => {
   return (
     <div className="workspace-list">
-      <img src="../assets/images/dark-wagon.png" alt="workspace icon" className="workspace" />
+      <img src="https://res.cloudinary.com/dgxkozw6v/image/upload/v1578770773/dark-wagon_lvu1yg.png" alt="workspace icon" className="workspace" />
     </div>
   );
 };
