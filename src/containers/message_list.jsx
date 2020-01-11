@@ -15,6 +15,10 @@ class MessageList extends Component {
     this.refresher = setInterval(this.fetchMessages, 5000);
   }
 
+  componentDidUpdate() {
+    this.list.scrollTop = this.list.scrollHeight;
+  }
+
   fetchMessages = () => {
     this.props.setMessages(this.props.selectedChannel);
   }
@@ -26,7 +30,7 @@ class MessageList extends Component {
           <h3>Channel #{this.props.selectedChannel}</h3>
         </div>
         <hr/>
-        <div className="channel-content">
+        <div className="channel-content" ref={(list) => { this.list = list; }}>
           {
             this.props.messages.map((message, index) => {
               return <Message key={index} message={message} />;
