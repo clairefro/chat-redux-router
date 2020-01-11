@@ -9,12 +9,7 @@ const App = () => {
       </div>
       <div className="channels">
       </div>
-      <div className="chat-panel">
-        <h2>CHANNEL HEADER</h2>
-        <hr/>
-        <MessageList />
-        <input type="text"/>
-      </div>
+      <MessageList />
     </div>
   );
 };

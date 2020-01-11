@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
 const Message = (props) => {
-  const { author, content, createdAt } = props.message;
+  const { author, content, created_at } = props.message;
   return (
     <div className="message">
-      <div className="header">
+      <div className="message-header">
         <h3>{author}</h3>
-        <p>{createdAt}</p>
+        <p>${created_at}</p>
       </div>
       <p className="message-content">{content}</p>
     </div>

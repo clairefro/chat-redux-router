@@ -4,16 +4,21 @@ import { connect } from 'react-redux';
 import { setMessages } from '../actions/index';
 
 import Message from '../components/message';
+import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
   componentWillMount() {
     // dispatch an action to udpate flats in Redux state tree
-    this.props.setMessages();
+    this.props.setMessages('general');
   }
 
   render() {
     return (
       <div className="channel-container">
+        <div className="channel-title">
+          <span>Channel #{this.props.selectedChannel}</span>
+        </div>
+        <hr/>
         <div className="channel-content">
           {
             this.props.messages.map((message, index) => {
@@ -21,6 +26,7 @@ class MessageList extends Component {
             })
           }
         </div>
+        <MessageForm />
       </div>
     );
   }
@@ -35,7 +41,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapReduxStateToProps(reduxState) {
   return ({
-    messages: reduxState.messages
+    messages: reduxState.messages,
+    selectedChannel: reduxState.selectedChannel
   });
 }
 
