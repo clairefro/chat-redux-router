@@ -1,11 +1,5 @@
-# redux-boilerplate
+# Redux Chat
 
-Simple React + Redux starter with the following config:
+Simple React + Redux chat app styled a la Slack, with emoji compatibility via [react-emojione](https://www.npmjs.com/package/react-emojione). 
 
-- React, ReactDOM
-- Redux, React-Redux
-- Webpack 3
-- Babel with es2015 and react presets
-- Bootstrap (css only, loaded from a cdn in `index.html`)
-- work with `.js` or `.jsx` files
-- main `application.scss` stylesheet is imported in `index.js` as a module to enjoy hot reloading
+Uses [Le Wagon's chat API](https://github.com/lewagon/wagon-chat-api) to store/retrieve messages, so your chat is public with others in the same channel. Note: message database is cleared every hour or so.
