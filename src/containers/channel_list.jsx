@@ -21,15 +21,17 @@ class ChannelList extends Component {
         <div className="channel-list">
           {
             channels.map((channel) => {
-              return <p
-                key={channel}
-                className={this.props.channelFromParams === channel ? 'selected': ''}
+              return (
+                <p
+                  key={channel}
+                  className={this.props.channelFromParams === channel ? 'selected': ''}
                 >
                   <Link to={`/${channel}`}>
                     #{channel}
                   </Link>
                 </p>
-              })
+              );
+            })
           }
         </div>
       </div>
