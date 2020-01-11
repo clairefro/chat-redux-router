@@ -11,10 +11,8 @@
   display: flex;
   align-items: center;
   h3 {
-
     color: $tone-darkest;
   }
-
 }
 
 .message {
@@ -23,7 +21,6 @@
     margin-right: 6px;
     margin-bottom: 0;
     margin-top: 0;
-
   }
   p {
     margin: 0;
@@ -31,6 +28,10 @@
   .message-header {
     display: flex;
     min-width: 350px;
+    .timestamp {
+      font-style: italic;
+      color: $tone-medium;
+    }
   }
 }
 

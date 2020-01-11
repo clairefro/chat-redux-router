@@ -10,7 +10,7 @@ const Message = (props) => {
     <div className="message">
       <div className="message-header">
         <h3>{author}</h3>
-        <p>{timestamp}</p>
+        <p className="timestamp">- {timestamp}</p>
       </div>
       <p className="message-content">{content}</p>
     </div>

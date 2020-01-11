@@ -19,8 +19,6 @@ class MessageList extends Component {
     this.props.setMessages(this.props.selectedChannel);
   }
 
-
-
   render() {
     return (
       <div className="channel-container">
