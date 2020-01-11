@@ -1,5 +1,5 @@
 {
-  "homepage": "https://clairefro.github.io/chat-redux/",
+  "homepage": "https://clairefro.github.io/chat-redux-router/",
   "license": "UNLICENSED",
   "devDependencies": {
     "babel-core": "^6.26.0",
