@@ -38,6 +38,14 @@
 .message-form {
   display: flex;
   margin-top: auto;
+  border-color: $tone-medium;
+  input {
+    margin-right: 6px;
+    &:focus {
+      box-shadow: none;
+      border-color: $tone-darkest;
+    }
+  }
 }
 
 hr {
