@@ -10,13 +10,19 @@ class ChannelList extends Component {
 
   render() {
     const { channels } = this.props;
+
     return (
       <div className="channel-list-panel">
         <h3>Redux Chat</h3>
         <div className="channel-list">
           {
-            channels.map((channel) => {
-              return <p>{channel}</p>
+            channels.map((channel, index) => {
+              let classes = this.props.selectedChannel === channel ? 'selected': '';
+              return <p
+                key={index}
+                className={classes}>
+                  {channel}
+                </p>
               })
           }
         </div>

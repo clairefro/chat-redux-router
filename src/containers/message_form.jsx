@@ -18,14 +18,14 @@ class MessageForm extends Component {
   }
 
   handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // prevent page reload
     this.props.createMessage(this.props.selectedChannel, this.props.currentUser, this.state.value);
-    this.setState({ value: '' }); // Reset message input
+    this.setState({ value: '' }); // Clear message form
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="channel-editor">
+      <form onSubmit={this.handleSubmit} className="message-form">
         <input
           ref={(input) => { this.messageBox = input; }}
           type="text"
