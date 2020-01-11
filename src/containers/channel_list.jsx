@@ -23,10 +23,10 @@ class ChannelList extends Component {
         <h3>Redux Chat</h3>
         <div className="channel-list">
           {
-            channels.map((channel, index) => {
+            channels.map((channel) => {
               let classes = this.props.selectedChannel === channel ? 'selected': '';
               return <p
-                key={index}
+                key={channel}
                 className={classes}
                 onClick={this.handleClick}>
                   {channel}
