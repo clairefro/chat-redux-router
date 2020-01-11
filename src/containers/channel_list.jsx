@@ -15,6 +15,7 @@ class ChannelList extends Component {
     this.props.selectChannel(e.target.innerHTML);
   }
 
+
   render() {
     const { channels } = this.props;
 
@@ -24,10 +25,9 @@ class ChannelList extends Component {
         <div className="channel-list">
           {
             channels.map((channel) => {
-              let classes = this.props.selectedChannel === channel ? 'selected': '';
               return <p
                 key={channel}
-                className={classes}
+                className={this.props.selectedChannel === channel ? 'selected': ''}
                 onClick={this.handleClick}>
                   {channel}
                 </p>
