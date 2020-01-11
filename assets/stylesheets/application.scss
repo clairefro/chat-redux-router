@@ -1,14 +1,16 @@
-@import './messages';
-@import './channels';
+@import './components/messages';
+@import './components/channels';
+@import './components/workspaces';
+
 
 body {
   font-family: Helvetica;
 }
+
 .app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 0;
   display: flex;
-  height: 95vh;
+  height: 100vh;
 }
 
 h3 {
