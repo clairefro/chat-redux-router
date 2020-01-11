@@ -7,7 +7,7 @@ export function setMessages(channel) {
     .then(response => response.json());
   return {
     type: SET_MESSAGES,
-    payload: promise
+    payload: promise // Will be resolved by redux-promise
   };
 }
 

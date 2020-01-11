@@ -8,7 +8,6 @@ import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
   componentWillMount() {
-    // dispatch an action to udpate flats in Redux state tree
     this.props.setMessages('general');
   }
 
@@ -16,7 +15,7 @@ class MessageList extends Component {
     return (
       <div className="channel-container">
         <div className="channel-title">
-          <span>Channel #{this.props.selectedChannel}</span>
+          <h3>Channel #{this.props.selectedChannel}</h3>
         </div>
         <hr/>
         <div className="channel-content">
