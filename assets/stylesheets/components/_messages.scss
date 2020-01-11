@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   h3 {
-    margin-right: 6px;
+
     color: $tone-darkest;
   }
 
@@ -19,12 +19,18 @@
 
 .message {
   margin-bottom: 10px;
-  p, h3 {
-    padding: 0;
+  h3 {
+    margin-right: 6px;
+    margin-bottom: 0;
+    margin-top: 0;
+
+  }
+  p {
     margin: 0;
   }
   .message-header {
     display: flex;
+    min-width: 350px;
   }
 }
 
