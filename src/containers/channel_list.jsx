@@ -12,10 +12,6 @@ class ChannelList extends Component {
     }
   }
 
-  handleClick = (e) => {
-    this.props.selectChannel(e.target.innerHTML.split('#')[1]);
-  }
-
   render() {
     const { channels } = this.props;
 
@@ -28,7 +24,7 @@ class ChannelList extends Component {
               return <p
                 key={channel}
                 className={this.props.channelFromParams === channel ? 'selected': ''}
-                onClick={this.handleClick}>
+                >
                   <Link to={`/${channel}`}>
                     #{channel}
                   </Link>
