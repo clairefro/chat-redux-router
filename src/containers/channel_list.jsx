@@ -4,9 +4,13 @@ import { connect } from 'react-redux';
 import { setMessages, selectChannel } from '../actions/index';
 
 class ChannelList extends Component {
-  // componentWillMount() {
-  //
-  // }
+  // fetch channel messages on each prop change (only if clicked channel differs from selected)
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.selectedChannel !== this.props.selectedChannel) {
+      this.props.setMessages(nextProps.selectedChannel);
+    }
+  }
+
   handleClick = (e) => {
     this.props.selectChannel(e.target.innerHTML);
   }

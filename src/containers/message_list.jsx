@@ -8,7 +8,11 @@ import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
   componentWillMount() {
-    this.props.setMessages('general');
+    this.fetchMessages();
+  }
+
+  fetchMessages = () => {
+    this.props.setMessages(this.props.selectedChannel);
   }
 
   render() {
