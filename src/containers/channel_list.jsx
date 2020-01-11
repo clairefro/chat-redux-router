@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { setMessages } from '../actions/index';
+import { setMessages, selectChannel } from '../actions/index';
 
 class ChannelList extends Component {
   // componentWillMount() {
   //
   // }
+  handleClick = (e) => {
+    this.props.selectChannel(e.target.innerHTML);
+  }
 
   render() {
     const { channels } = this.props;
@@ -20,7 +23,8 @@ class ChannelList extends Component {
               let classes = this.props.selectedChannel === channel ? 'selected': '';
               return <p
                 key={index}
-                className={classes}>
+                className={classes}
+                onClick={this.handleClick}>
                   {channel}
                 </p>
               })
@@ -33,7 +37,7 @@ class ChannelList extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { setMessages },
+    { setMessages, selectChannel },
     dispatch
   );
 }

@@ -1,5 +1,7 @@
 .channel-container {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .message p, h3 {
@@ -17,4 +19,5 @@
 
 .message-form {
   display: flex;
+  
 }
