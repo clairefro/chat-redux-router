@@ -12,9 +12,8 @@ class ChannelList extends Component {
   }
 
   handleClick = (e) => {
-    this.props.selectChannel(e.target.innerHTML);
+    this.props.selectChannel(e.target.innerHTML.split('#')[1]);
   }
-
 
   render() {
     const { channels } = this.props;
