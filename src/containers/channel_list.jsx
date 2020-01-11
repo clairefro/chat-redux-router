@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setMessages, selectChannel } from '../actions/index';
+import { setMessages } from '../actions/index';
 
 class ChannelList extends Component {
   // fetch channel messages on each prop change (only if clicked channel differs from selected)
@@ -39,7 +39,7 @@ class ChannelList extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
-    { setMessages, selectChannel },
+    { setMessages },
     dispatch
   );
 }
