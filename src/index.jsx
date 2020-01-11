@@ -21,8 +21,7 @@ const identityReducer = (state = null) => state;
 const reducers = combineReducers({
   messages: messagesReducer,
   channels: identityReducer,
-  currentUser: identityReducer,
-  selectedChannel: selectedChannelReducer
+  currentUser: identityReducer
 });
 
 // apply middlewares
@@ -31,18 +30,20 @@ const middlewares = applyMiddleware(logger, reduxPromise);
 const initialState = {
   messages: [],
   channels: ['general', 'react', 'ruby', 'paris', 'montreal', 'help'],
-  currentUser: `anonymous${Math.floor(10 + (Math.random() * 90))}`, // prompt("What is your username?") ,
+  currentUser: `anonymous${Math.floor(10 + (Math.random() * 90))}` // prompt("What is your username?") ,
   // currentUser: `anonymous${Math.floor(10 + (Math.random() * 90))}`,
-  selectedChannel: 'general'
+
 };
 
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middlewares)}>
-    <Switch>
-      <Route path=":channel" component={App} />
-      <Redirect from="/" to="general" />
-    </Switch>
+    <Router>
+      <Switch>
+        <Route path="/:channel" component={App} />
+        <Redirect from="/" to="general" />
+      </Switch>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );

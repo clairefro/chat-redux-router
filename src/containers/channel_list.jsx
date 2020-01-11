@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { setMessages, selectChannel } from '../actions/index';
 
 class ChannelList extends Component {
   // fetch channel messages on each prop change (only if clicked channel differs from selected)
   componentWillReceiveProps(nextProps) {
-    if (nextProps.selectedChannel !== this.props.selectedChannel) {
-      this.props.setMessages(nextProps.selectedChannel);
+    if (nextProps.channelFromParams !== this.props.channelFromParams) {
+      this.props.setMessages(nextProps.channelFromParams);
     }
   }
 
@@ -26,9 +27,11 @@ class ChannelList extends Component {
             channels.map((channel) => {
               return <p
                 key={channel}
-                className={this.props.selectedChannel === channel ? 'selected': ''}
+                className={this.props.channelFromParams === channel ? 'selected': ''}
                 onClick={this.handleClick}>
-                  #{channel}
+                  <Link to={`/${channel}`}>
+                    #{channel}
+                  </Link>
                 </p>
               })
           }
@@ -47,8 +50,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapReduxStateToProps(reduxState) {
   return ({
-    channels: reduxState.channels,
-    selectedChannel: reduxState.selectedChannel
+    channels: reduxState.channels
   });
 }
 

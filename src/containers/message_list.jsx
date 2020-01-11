@@ -20,14 +20,14 @@ class MessageList extends Component {
   }
 
   fetchMessages = () => {
-    this.props.setMessages(this.props.selectedChannel);
+    this.props.setMessages(this.props.channelFromParams);
   }
 
   render() {
     return (
       <div className="channel-container">
         <div className="channel-title">
-          <h3>Channel #{this.props.selectedChannel}</h3>
+          <h3>Channel #{this.props.channelFromParams}</h3>
         </div>
         <hr/>
         <div className="channel-content" ref={(list) => { this.list = list; }}>
@@ -37,7 +37,7 @@ class MessageList extends Component {
             })
           }
         </div>
-        <MessageForm />
+        <MessageForm channelFromParams={this.props.channelFromParams}/>
       </div>
     );
   }
@@ -52,8 +52,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapReduxStateToProps(reduxState) {
   return ({
-    messages: reduxState.messages,
-    selectedChannel: reduxState.selectedChannel
+    messages: reduxState.messages
   });
 }
 

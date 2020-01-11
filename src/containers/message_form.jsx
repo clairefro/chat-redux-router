@@ -9,9 +9,9 @@ class MessageForm extends Component {
     this.state = { value: '' };
   }
 
-  componentDidMount() {
-    this.messageBox.focus();
-  }
+  // componentDidMount() {
+  //   this.messageBox.focus();
+  // }
 
   handleChange = (event) => {
     this.setState({ value: event.target.value });
@@ -19,7 +19,7 @@ class MessageForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault(); // prevent page reload
-    this.props.createMessage(this.props.selectedChannel, this.props.currentUser, this.state.value);
+    this.props.createMessage(this.props.channelFromParams, this.props.currentUser, this.state.value);
     this.setState({ value: '' }); // Clear message form
   }
 
@@ -46,8 +46,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
-    currentUser: state.currentUser,
-    selectedChannel: state.selectedChannel
+    currentUser: state.currentUser
   };
 }
 

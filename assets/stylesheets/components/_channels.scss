@@ -14,9 +14,18 @@
       cursor: pointer;
     }
   }
+  a {
+    color: $tone-dark;
+    &:hover, &:active, &:link {
+      text-decoration: none;
+    }
+  }
 }
 
 .channel-list .selected {
   font-weight: bold;
+  color: $tone-darkest;
+}
+p.selected a {
   color: $tone-darkest;
 }
