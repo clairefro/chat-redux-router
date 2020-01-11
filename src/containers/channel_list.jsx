@@ -29,7 +29,7 @@ class ChannelList extends Component {
                 key={channel}
                 className={this.props.selectedChannel === channel ? 'selected': ''}
                 onClick={this.handleClick}>
-                  {channel}
+                  #{channel}
                 </p>
               })
           }
