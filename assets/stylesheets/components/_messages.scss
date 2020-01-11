@@ -7,6 +7,13 @@
   width: 100%;
   .channel-content {
     overflow-y: scroll;
+    margin: 10px 0;
+    &::-webkit-scrollbar {
+      background-color: $tone-light;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $tone-dark;
+    }
   }
 }
 
@@ -55,4 +62,5 @@
 hr {
   border-top: 1px solid $tone-darkest;
   margin: 20px 0px;
+  margin-bottom: 0;
 }
