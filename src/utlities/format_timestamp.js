@@ -11,5 +11,5 @@ export default (fetchedTimestamp) => {
   if (mins.length < 2) {
     mins = `0${mins}`;
   }
-  return `${month} ${day}, ${hours}:${mins}`;
+  return `${month} ${day} at ${hours}:${mins}`;
 };

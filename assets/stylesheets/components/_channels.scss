@@ -10,6 +10,9 @@
   }
   p {
     color: $tone-dark;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
