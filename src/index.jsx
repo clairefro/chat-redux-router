@@ -14,7 +14,7 @@ import '../assets/stylesheets/application.scss';
 
 // State and reducers
 import messagesReducer from './reducers/messages_reducer';
-import selectedChannelReducer from './reducers/selected_channel_reducer';
+
 
 const identityReducer = (state = null) => state;
 
@@ -38,7 +38,7 @@ const initialState = {
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middlewares)}>
-    <Router>
+    <Router history={history}>
       <Switch>
         <Route path="/:channel" component={App} />
         <Redirect from="/" to="general" />
