@@ -38,7 +38,7 @@ const initialState = {
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, initialState, middlewares)}>
-    <Router history={history}>
+    <Router history={history} basename="/chat-redux-router/">
       <Switch>
         <Route path="/:channel" component={App} />
         <Redirect from="/" to="general" />

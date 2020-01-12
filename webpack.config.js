@@ -2,12 +2,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    // added for router handling
-    publicPath: '/'
-  },
+  // output: {
+  //   path: path.resolve(__dirname, 'dist'),
+  //   filename: 'bundle.js',
+  //   // added for router handling
+  //   // for github pages:
+  //   publicPath: '/chat-redux-router/'
+  //   // for local dev env:
+  //   // publicPath: '/'
+  // },
   plugins: [
     new HtmlWebpackPlugin({
       template: '!!html-loader!templates/index.html'
